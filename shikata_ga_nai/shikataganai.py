@@ -6,14 +6,11 @@ def initESIL():
     r.cmd('e asm.bits=32')
     r.cmd('aei')
     r.cmd('aeim 0xffffd000')
+    r.cmd('.ar*')  # set all registers to zero
     r.cmd('aer esp=0xffffd000')
     r.cmd('aer ebp=0xffffd000')
-    r.cmd('.ar*')  # set all registers to zerosetup_ESIL(r)
 
 def dump (start):
-    r.cmd('e asm.comments=false');
-    r.cmd('e asm.lines=false');
-    r.cmd('e asm.flags=false');
 
     end = r.cmdj('oj')[0]['size']  # size of the opened object
 
@@ -43,7 +40,7 @@ def decode(r):
         #
         # So we take note of the offset of the latest FPU instruction,
         # on put it in `esp` when `fnstenv` is encounted.
-        if r.cmdj('abj %s' % current_op['bytes'])[0]['family'] == 'fpu':
+        if current_op['family'] == 'fpu':
             if current_op['opcode'].startswith('fnstenv'):
                 r.cmd('wv %d @ esp' % lastfpu)
             else:
@@ -63,5 +60,8 @@ if len(sys.argv) != 2:
     sys.exit(0)
 
 r = r2pipe.open(sys.argv[1])
+r.cmd('e asm.comments=false');
+r.cmd('e asm.lines=false');
+r.cmd('e asm.flags=false');
 initESIL()
 decode(r)

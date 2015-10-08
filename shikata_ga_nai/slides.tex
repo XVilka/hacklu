@@ -17,10 +17,6 @@
 
 \maketitle
 
-\begin{frame}{Agenda}
-	\tableofcontents
-\end{frame}
-
 \begin{frame}{whoami}
 	\begin{block}{Julien (jvoisin) Voisin}
 	\begin{itemize}
@@ -32,8 +28,13 @@
 \end{frame}
 
 \begin{frame}{Disclaimer}
-	This workshop is based on ideas and scripts from Jaime (@NighetMan) Peñalba.
+	\begin{center}
+		This workshop is based on ideas and scripts from\\
+		Jaime (\alert{@NighetMan}) Peñalba.
+	\end{center}
 \end{frame}
+
+\section{What are we going to do?}
 
 \begin{frame}{Shikata ga nai}
 	\includegraphics[width=\textwidth]{description.png}
@@ -41,26 +42,39 @@
 
 \begin{frame}{Shikata ga nai}
 	\begin{itemize}
+		\item Polymorphic
 		\item 320 LoC
-		\item Everyone patches it
 		\item We want the original shellcode
 	\end{itemize}
 \end{frame}
 
+\section{How do we do it?}
+
 \begin{frame}{Solutions}
-	\begin{itemize}
+	\begin{itemize}[<+->]
 		\item Run it as root on your machine
 		\item Step-step-step-step-step-…
 		\item Trace the execution in a virtual machine
-		\item Use radare2\footnote{From git} ;)
+		\item Use radare2\footnote{From git} with ESIL!
 	\end{itemize}
 \end{frame}
+
+\section{But what is ESIL?}
 
 \begin{frame}{ESIL}
 	\begin{itemize}
 		\item Evaluable String Intermediary Language
+		\item RPN-ish
+		\item \alert{$jz\;0xaabbccdd$} :  $zf,?{,0xaabbccdd,eip,=,}$
+	\end{itemize}
+\end{frame}
+
+\section{So what?}
+
+\begin{frame}{ESIL}
+	\begin{itemize}
 		\item Used for
-			\begin{itemize}
+			\begin{itemize}[<+->]
 				\item Emulation
 				\item Decompilation\footnote{See radeco}
 				\item Analysis
@@ -68,6 +82,8 @@
 			\end{itemize}
 		\end{itemize}
 \end{frame}
+
+\section{How does emulation help us to dump the shellcode?}
 
 \begin{frame}{Where to stop?}
 	We can emulate the shellcode, but where do we stop?
@@ -81,13 +97,25 @@
 \end{frame}
 
 \begin{frame}{Reading the source code}
-	It seems that the last instruction will always be \alert{loop}, and its counter in \alert{ecx}.
+	It seems that the last instruction will always be \alert{loop}.
 	\newline
-	So we can emulate the shellcode, and dump the result at the last \alert{loop} instruction.
+	\newline
+	So we can emulate the shellcode, and dump the result from the last \alert{loop} instruction
+	till then end.
 \end{frame}
+
+\section{How do we use radare2/ESIL anyway?}
 
 \begin{frame}{r2pipe}
 	\includegraphics[width=\textwidth]{r2pipe.png}
+\end{frame}
+
+\begin{frame}{Languages}
+	\begin{itemize}
+		\item npm install r2pipe
+		\item pip install r2pipe
+		\item gem install r2pipe
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Initializing the ESIL VM}
@@ -107,8 +135,44 @@
 	}
 \end{frame}
 
-\begin{frame}{Your turn!}
-	\includegraphics[width=\textwidth]{initmem.png}
+\section{Can we emulate them the \emph{ghetto way}?}
+
+\begin{frame}{Are those detected as FPU by r2?}
+	\begin{itemize}
+		\item You've got the \alert{hello\_world.py} code
+		\item Check if every opcode in the \alert{test\_fpu.py} one has the \alert{fpu} family
+		\item Feel free to do it in your favourite language!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{My solution}
+	\includegraphics[width=\textwidth]{fpus.png}
+\end{frame}
+
+\section{Ready to unpack shikata ga nai?}
+
+\begin{frame}{Sum up}
+	\begin{enumerate}
+		\item Initialize the ESIL vm
+		\item If the instruction is \alert{invalid}
+			\begin{enumerate}
+				\item We're at the end!
+				\item Dump from the last encountered \alert{loop} instruction to the end
+			\end{enumerate}
+		\item Else, if the instruction is an fpu one
+			\begin{enumerate}
+				\item If it's \alert{fnstenv}, write the previously stored \alert{eip} at \alert{esp}
+				\item Else, store \alert{eip}
+			\end{enumerate}
+		\item Else, if the instruction is \alert{loop}, store its location
+		\item Step and goto \emph{2}.
+	\end{enumerate}
+\end{frame}
+
+\section{Your turn!}
+
+\begin{frame}{My solution}
+	\includegraphics[width=\textwidth]{solution.png}
 \end{frame}
 
 \section*{Conclusion}
