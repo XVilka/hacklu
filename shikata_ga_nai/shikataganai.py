@@ -5,7 +5,7 @@ def initESIL():
     r.cmd('e io.cache=true')
     r.cmd('e asm.bits=32')
     r.cmd('aei')
-    r.cmd('aeim 0xffffd000')
+    r.cmd('aeim 0xffffd000 0x2000 stack')
     r.cmd('.ar*')  # set all registers to zero
     r.cmd('aer esp=0xffffd000')
     r.cmd('aer ebp=0xffffd000')

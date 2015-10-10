@@ -4,12 +4,11 @@
 \usepackage[T1]{ fontenc }
 \usepackage{ graphicx }
 \graphicspath{ {./pix/} }
-\usepackage{ pifont }
 
-\usetheme{m}
+\usetheme[block=fill]{m}
 
-\title{Radare2 workshop}
-\author{Shikata ga nai}
+\title{Shikata ga nai}
+\author{Radare2 workshop}
 \date{\today}
 \institute{hack.lu 2015}
 
@@ -37,14 +36,17 @@
 \section{What are we going to do?}
 
 \begin{frame}{Shikata ga nai}
+	\begin{center}
+		Unpack \alert{Shikata ga nai}!
+	\end{center}
 	\includegraphics[width=\textwidth]{description.png}
 \end{frame}
 
 \begin{frame}{Shikata ga nai}
 	\begin{itemize}
 		\item Polymorphic
-		\item 320 LoC
-		\item We want the original shellcode
+		\item 320 lines of msf-powered OOP Ruby
+		\item We want the unpacked shellcode
 	\end{itemize}
 \end{frame}
 
@@ -52,10 +54,10 @@
 
 \begin{frame}{Solutions}
 	\begin{itemize}[<+->]
-		\item Run it as root on your machine
-		\item Step-step-step-step-step-…
+		\item Run it on your machine and see what happens
+		\item Step-step-step-step-step-… in gdb
 		\item Trace the execution in a virtual machine
-		\item Use radare2\footnote{From git} with ESIL!
+		\item Use radare2 with \alert{ESIL}!
 	\end{itemize}
 \end{frame}
 
@@ -64,42 +66,52 @@
 \begin{frame}{ESIL}
 	\begin{itemize}
 		\item Evaluable String Intermediary Language
+		\item Yet another intermediary language
 		\item RPN-ish
 		\item \alert{$jz\;0xaabbccdd$} :  $zf,?{,0xaabbccdd,eip,=,}$
 	\end{itemize}
 \end{frame}
 
-\section{So what?}
+\section{What can we do with this \emph{ESIL}?}
 
 \begin{frame}{ESIL}
-	\begin{itemize}
-		\item Used for
-			\begin{itemize}[<+->]
-				\item Emulation
-				\item Decompilation\footnote{See radeco}
-				\item Analysis
-				\item Flamewars against other IL
+	\begin{columns}
+		\begin{column}{.4\textwidth}
+			\begin{itemize}
+				\item Used for
+					\begin{itemize}[<+->]
+						\item Emulation
+						\item Decompilation
+						\item Analysis
+						\item Flamewars against other IL
+					\end{itemize}
 			\end{itemize}
-		\end{itemize}
+		\end{column}
+		\begin{column}{.6\textwidth}
+			\includegraphics[width=\textwidth]{esil.png}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \section{How does emulation help us to dump the shellcode?}
 
 \begin{frame}{Where to stop?}
-	We can emulate the shellcode, but where do we stop?
+	We can emulate the shellcode, but \alert{where} do we stop?
 	\begin{itemize}
-		\item Instructions aren't fixed
-		\item Blocks are permutated
-		\item Registers are dynamically selected
-		\item{}
-		\item So what can we do?
+		\item Instructions aren't fixed.
+		\item Blocks are permutated.
+		\item Registers are dynamically selected.
 	\end{itemize}
+	\begin{center}
+		So what can we do?
+	\end{center}
 \end{frame}
 
 \begin{frame}{Reading the source code}
 	It seems that the last instruction will always be \alert{loop}.
 	\newline
 	\newline
+	\pause
 	So we can emulate the shellcode, and dump the result from the last \alert{loop} instruction
 	till then end.
 \end{frame}
@@ -111,22 +123,24 @@
 \end{frame}
 
 \begin{frame}{Languages}
-	\begin{itemize}
-		\item npm install r2pipe
-		\item pip install r2pipe
-		\item gem install r2pipe
-	\end{itemize}
+	\begin{block}{NodeJS}
+		npm install r2pipe
+	\end{block}
+	\begin{block}{Python}
+		pip install r2pipe
+	\end{block}
+	\begin{block}{Ruby}
+		gem install r2pipe
+	\end{block}
 \end{frame}
 
-\begin{frame}{Initializing the ESIL VM}
-	\includegraphics[width=\textwidth]{initmem.png}
-\end{frame}
+\section{So let's use ESIL?}
 
 \begin{frame}{Plot twist}
 	\only<1>{
 		\begin{itemize}
 			\item FPU is currently not supported in ESIL :D
-			\item Only used to get EIP with \alert{FNSTENV}
+			\item FPU is used to get EIP with \alert{FNSTENV}
 			\item Polymorphic FPU instructions
 		\end{itemize}
 	}
