@@ -178,74 +178,74 @@ af+ 0xb2de 113 func_ROM_B2DE
 "CCa 0xb2de "
 af+ 0xb6f5 6 jump_to_R2R1
 "CCa 0xb6f5 "
-f .erase_loop=0x31
-f .return=0xf6
-f .loop=0x17f
-f .timer_1_wait_loop=0x1bd
-f .return=0x1c7
-f .receive_CMD=0x1e2
-f .receive_DATA=0x1ee
-f .return=0x1fb
-f .set_PNPCFG_EC_acess_only=0x363
-f .read_write_cycle_start=0x37c
-f .read_write_cycle_end=0x3b2
-f .return=0x555
-f .return=0x590
-f .read_without_checking=0x5ab
-f .return=0x5b8
-f .return=0x67b
-f .return=0x837
-f .return=0x883
-f .return=0x895
-f .return_zero=0x8b7
-f .return=0x8bc
-f .return=0x11db
-f .return=0x133b
-f .return=0x13be
-f .return=0x1511
-f .return=0x153c
-f .return=0x1678
-f .return=0x16a3
-f .return=0x1971
-f .return=0x1990
-f .return=0x1aad
-f .return=0x1af4
-f .return=0x1ff6
-f .return=0x2167
-f .return=0x2784
-f .return=0x3de2
-f .return=0x47fa
-f .loop_again=0x4a8a
-f .return=0x4ad3
-f .return=0x4b08
-f .cycle_loop=0x4ec1
-f .forward_cycle=0x5006
-f .read_wait_CMD=0x503d
-f .read_wait_DATA=0x504c
-f .write_wait=0x50cb
-f .finalize=0x5122
-f .parse_output=0x5161
-f .write_0xAD_to_0xF=0x5179
-f .write_0x2_to_0xF=0x517e
-f .return=0x5186
-f .write_1=0x51dd
-f .channel_0=0x5df3
-f .channel_1=0x5dfc
-f .channel_2=0x5e05
-f .channel_3=0x5e0e
-f .default=0x5e15
-f .check_status=0x684c
-f .check_status_again=0x6859
-f .check_status_again_2=0x6865
-f .check_status=0x68cf
-f .return=0x6c23
-f .clear_RAM_68=0x6ec7
-f .return=0x767f
-f .return=0x7773
-f .return=0x77b5
-f .cycle_start=0x8023
-f .return_=0x8b75
-f .clear_6_bit=0x94fa
+f.erase_loop @ 0x31
+f.return @ 0xf6
+f.loop @ 0x17f
+f.timer_1_wait_loop @ 0x1bd
+f.return @ 0x1c7
+f.receive_CMD @ 0x1e2
+f.receive_DATA @ 0x1ee
+f.return @ 0x1fb
+f.set_PNPCFG_EC_acess_only @ 0x363
+f.read_write_cycle_start @ 0x37c
+f.read_write_cycle_end @ 0x3b2
+f.return @ 0x555
+f.return @ 0x590
+f.read_without_checking @ 0x5ab
+f.return @ 0x5b8
+f.return @ 0x67b
+f.return @ 0x837
+f.return @ 0x883
+f.return @ 0x895
+f.return_zero @ 0x8b7
+f.return @ 0x8bc
+f.return @ 0x11db
+f.return @ 0x133b
+f.return @ 0x13be
+f.return @ 0x1511
+f.return @ 0x153c
+f.return @ 0x1678
+f.return @ 0x16a3
+f.return @ 0x1971
+f.return @ 0x1990
+f.return @ 0x1aad
+f.return @ 0x1af4
+f.return @ 0x1ff6
+f.return @ 0x2167
+f.return @ 0x2784
+f.return @ 0x3de2
+f.return @ 0x47fa
+f.loop_again @ 0x4a8a
+f.return @ 0x4ad3
+f.return @ 0x4b08
+f.cycle_loop @ 0x4ec1
+f.forward_cycle @ 0x5006
+f.read_wait_CMD @ 0x503d
+f.read_wait_DATA @ 0x504c
+f.write_wait @ 0x50cb
+f.finalize @ 0x5122
+f.parse_output @ 0x5161
+f.write_0xAD_to_0xF @ 0x5179
+f.write_0x2_to_0xF @ 0x517e
+f.return @ 0x5186
+f.write_1 @ 0x51dd
+f.channel_0 @ 0x5df3
+f.channel_1 @ 0x5dfc
+f.channel_2 @ 0x5e05
+f.channel_3 @ 0x5e0e
+f.default @ 0x5e15
+f.check_status @ 0x684c
+f.check_status_again @ 0x6859
+f.check_status_again_2 @ 0x6865
+f.check_status @ 0x68cf
+f.return @ 0x6c23
+f.clear_RAM_68 @ 0x6ec7
+f.return @ 0x767f
+f.return @ 0x7773
+f.return @ 0x77b5
+f.cycle_start @ 0x8023
+f.return_ @ 0x8b75
+f.clear_6_bit @ 0x94fa
 "CCa 46 uint8_t i = 254;"
 "CCa 48 uint8_t a = 0;"
 "CCa 49 while (i > 0)"
