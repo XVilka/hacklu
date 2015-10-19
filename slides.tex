@@ -792,11 +792,11 @@ This command is same as rahash2 -a sha1 file.exe
   \center Lets start from the static analysis \footfullcite{r2esiltv}
   \center r2 -a 8051 ite\_it8502.rom
   \center . ite\_it8502.r2
-  \center run 'e io.cache=true' to use the cache for write operations
-  \center run 'aei' command to init ESIL VM
-  \center run 'aeim' command to init ESIL VM stack
-  \center run 'aeip' command to start from the current offset
-  \center run 'aecu [addr]' to emulate until the [addr] is reached
+  \center run `e io.cache=true' to use the cache for write operations
+  \center run `aei' command to init ESIL VM
+  \center run `aeim' command to init ESIL VM stack
+  \center run `aeip' command to start from the current offset
+  \center run `aecu [addr]' to emulate until the [addr] is reached
 \end{frame}
 % show demo here
 % Reference to the example from here? http://radare.tv/a/44
@@ -806,9 +806,9 @@ This command is same as rahash2 -a sha1 file.exe
   \center Lets start again from the same place
   \center r2 -a 8051 ite\_it8502.rom
   \center . ite\_it8502.r2
-  \center run 'pae 36' to show the esil expression of the 'set\_SMBus\_frequency'
-  \center run 'aetr \`{}pae 36\`' to convert the previous esil output to REIL
-  \center store this to some file and use the 'openreil' utility to SMT it
+  \center run `pae 36' to show the esil expression of the `set\_SMBus\_frequency'
+  \center run `aetr \`{}pae 36\`' to convert the previous esil output to REIL
+  \center store this to some file and use the `openreil' utility to SMT it
 \end{frame}
 % this is:
 % aetr `pae 36`
