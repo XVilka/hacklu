@@ -5,10 +5,17 @@
 \usepackage[scale=2]{ccicons}
 \usepackage{url}
 \usepackage{hyperref}
-\usepackage{ drawstack }
+\usepackage{drawstack}
 
-\graphicspath{ {./pix/} }
-\usetheme[useTitleProgressBar]{m}
+\graphicspath{{./pix/}}
+
+% ------ Determine if we're being compiled under XeLaTeX -----
+\usepackage{ifxetex}
+\ifxetex
+	\usetheme[useTitleProgressBar]{m}
+\else
+	\usetheme{beaver}
+\fi
 
 % ------ Embed URL in the reference title ------
 
@@ -393,7 +400,7 @@ This command is same as rahash2 -a sha1 file.exe
 % Mention 010 editor
 
 \begin{frame}[fragile]
-  \frametitle{Radare2 — 'Major' command example: pf}
+  \frametitle{Radare2 — `Major' command example: pf}
   Quick Demo
 \end{frame}
 
@@ -771,7 +778,6 @@ This command is same as rahash2 -a sha1 file.exe
 
 % show demo here - demos/demo3_x86_legacy
 % download bios_extract here http://www.coreboot.org/Bios_extract
-\iffalse
 \begin{frame}[fragile]
   \frametitle{Embedded controller - 8051}
   \center Lets start from the static analysis
@@ -783,7 +789,7 @@ This command is same as rahash2 -a sha1 file.exe
 
 \begin{frame}[fragile]
   \frametitle{Embedded controller - 8051 - ESIL VM}
-  \center Lets start from the static analysis \foootfullcite{r2esiltv}
+  \center Lets start from the static analysis \footfullcite{r2esiltv}
   \center r2 -a 8051 ite\_it8502.rom
   \center . ite\_it8502.r2
   \center run 'e io.cache=true' to use the cache for write operations
@@ -808,7 +814,6 @@ This command is same as rahash2 -a sha1 file.exe
 % aetr `pae 36`
 % reference to the https://github.com/Cr4sh/openreil
 % what about some demo for that?
-\fi
 
 \begin{frame}[fragile]
   \frametitle{Documentation}
@@ -825,5 +830,5 @@ This command is same as rahash2 -a sha1 file.exe
 	\printbibliography
 \end{frame}
 
-
 \end{document}
+
