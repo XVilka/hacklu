@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
 	intptr_t libc_base = get_base_addr ();
 	printf("libc base addr - %p\n", (void*)libc_base);
 	unsigned long long input_value;
-	printf("where should I jump to? ");
+	printf("where should I jump to [base 10]? ");
 	scanf("%llu", &input_value);
 	void (*func_ptr)(void) = (void (*)(void))input_value;
 	asm __volatile__ ("xor %rsi, %rsi;");
