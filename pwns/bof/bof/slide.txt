@@ -1,0 +1,32 @@
+finding offset into buffer
+
+de bruijn pattern (cyclic pattern, can find offset)
+made popular by metasploit/peda
+
+r2 has this feature
+
+bof - pwnablekr
+set dword to magic value
+
+ragg2 -P <number> -r # generate pattern.
+debug profile can set args/stdin/etc, so we can set inputs
+
+r2 -de dbg.profile=bof.rr2 bof
+dcu sym.func
+db (check address)
+	0xf779b654 b  817d08bebafe.  cmp dword [ebp + 8], 0xcafebabe ; [0xcafebabe:4]=-1 
+dc
+
+drr = show registers with context. notice ebp points somewhere in our string,
+find the offset of this
+
+pxr 4 @ ebp + 8 # print hex with references
+
+[0xf779b62c]> pxr 4 @ ebp + 8     
+0xffebbd10  0x41534141  AASA ascii
+
+now we know where this is pointing, simple to get the offset!
+[0xf779b62c]> woO 0x41534141
+52                          
+
+so ebp + 8 points 52 bytes into the buffer.
