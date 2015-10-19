@@ -118,7 +118,8 @@
 \begin{frame}[fragile]
   \frametitle{Jeffrey Crowell}
     \begin{itemize}
-			\item M
+			\item Boston, MA, USA
+			\item Shellphish CTF
     \end{itemize}
 \end{frame}
 
@@ -734,6 +735,86 @@ This command is same as rahash2 -a sha1 file.exe
 
 \begin{frame}{Show me yours, I'll show you mine}
 	\includegraphics[width=1.05\textwidth,height=4.5cm]{exploit_pwn1.png}
+\end{frame}
+
+\section{Using r2 for exploit}
+\begin{frame}{popular tools}
+	\begin{itemize}
+		\item gdb + peda - search memory, dereference stack/registers, debug.
+		\item ida - find xrefs/calls, debug
+		\item ropgadget - search for gadgets
+		\item r2 can do all of this...
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{"telescoping" register}
+	\begin{columns}
+		\begin{column}{.3\textwidth}
+			\begin{itemize}
+				\item "telescoping" registers
+				\item "telescoping" stack references
+				\item we lose our analysis capabilities on gdb
+			\end{itemize}
+		\end{column}
+		\begin{column}{.7\textwidth}
+			\includegraphics[width=\textwidth]{cr_images/peda_context.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{"telescoping" register}
+	\begin{columns}
+		\begin{column}{.3\textwidth}
+			\begin{itemize}
+				\item we can do the same thing with r2
+				\item display references to code/ascii/etc. from registers/stack
+				\item quite useful for dynamic analysis.
+				\item keep flags, symbols, etc.
+				\item drr (registers) pxr N @ esp/rsp (stack)
+			\end{itemize}
+		\end{column}
+		\begin{column}{.7\textwidth}
+			\includegraphics[width=\textwidth]{cr_images/r2_context1.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{knowing context is useful}
+	\begin{itemize}
+		\item does your register point to a string you control?
+		\item what's in the stack?
+		\item keep flags, symbols, etc.
+		\item use from within visual mode `e dbg.slow = true`
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{pattern generate}
+	\begin{itemize}
+		\item DeBruijn patterns.
+		\item made famous by metasploit pattern\_create.rb
+		\item cyclic patterns, find offset in string.
+		\item Where's our faked struct/string/etc. being referenced?
+		\item Where did we crash?
+		\item ragg2 -P -r or woD to write
+		\item ragg2 -q or woO to find your offset.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{debug 'profiles'}
+	\begin{itemize}
+		\item r2 -de dbg.profile=file.rr2 exec.elf
+		\item set custom arguments, redirect stdin/out to files/sockets
+		\item useful for reproducing environments
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{context + patterns}
+	\begin{itemize}
+		\item bof from pwnable.kr
+		\item super simple challenge, overflow a buffer
+		\item offset at a certain place must be.
+		\item let's use rarun2 + references + patterns!
+	\end{itemize}
 \end{frame}
 
 \section{Malware Analysis}
