@@ -634,6 +634,18 @@ This command is same as rahash2 -a sha1 file.exe
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{getting binary info}
+	\begin{itemize}
+		\item "checksec" - get info : pie, stack canaries, nx
+		\item find strings - find references to calls, etc.
+		\item find writable/executable sections
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{getting binary info}
+	\includegraphics[width=\textwidth]{cr_images/bin-info.png}
+\end{frame}
+
 \begin{frame}{"telescoping" register}
 	\begin{columns}
 		\begin{column}{.3\textwidth}
@@ -701,6 +713,98 @@ This command is same as rahash2 -a sha1 file.exe
 		\item super simple challenge, overflow a buffer
 		\item offset at a certain place must be.
 		\item let's use rarun2 + references + patterns!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{context + patterns}
+	\includegraphics[width=\textwidth]{cr_images/bof1.png}
+	\begin{itemize}
+		\item write your own expl ;)
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{shellcoding}
+	\begin{itemize}
+		\item ragg2 isn't just for generating patterns
+		\item front-end for generating shellcodes
+		\item still up to you to ensure null-free, etc.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{shellcoding}
+	\begin{itemize}
+		\item relocatable
+		\item testable (compile directly into elf)
+		\item call arbitrary syscalls easily!
+		\item x86, amd64, arm, windows, mac, linux, ios
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{shellcoding}
+	\includegraphics[width=\textwidth]{cr_images/shellcode.png}
+	\begin{itemize}
+		\item ragg2 file.r -s to show the emmitted asm.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{code reuse}
+	\begin{itemize}
+		\item return to libc
+		\item rop
+		\item r2 can make this easy
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{code reuse}
+	\begin{itemize}
+		\item magic shell-spawning gadget
+		\item thanks dragon sector for making this well-known
+		\item exists in amd64 glibc, libruby, and more...
+		\item let's find it with r2
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{code reuse}
+	\begin{itemize}
+		\item demo
+		\item r2 -A /path/to/libc
+		\item axt sym.execve
+		\look look through xrefs, find it.
+		\look simple demo program on vm does 1 call of your base10 input address
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{rop}
+	\begin{itemize}
+		\item can't always use this magic gadget
+		\item rsi must point to something argv-like
+		\item sometimes need to find some odd bespoke gadget!
+		\item r2 can dump gadgets
+		\item regular expression search
+		\item dump to json, write your own tool via r2pipe.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{rop}
+	\begin{itemize}
+		\item can't always use this magic gadget
+		\item rsi must point to something argv-like
+		\item sometimes need to find some odd bespoke gadget!
+		\item r2 can dump gadgets
+		\item regular expression search
+		\item dump to json, write your own tool via r2pipe.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{stack layout}
+	\begin{itemize}
+		\item can't al
+		\item rsi must point to something argv-like
+		\item sometimes need to find some odd bespoke gadget!
+		\item r2 can dump gadgets
+		\item regular expression search
+		\item dump to json, write your own tool via r2pipe.
 	\end{itemize}
 \end{frame}
 
