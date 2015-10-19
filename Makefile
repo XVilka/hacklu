@@ -2,7 +2,7 @@ all: slides
 
 slides: slides.tex
 	xelatex slides.tex
-	biber slides
+	#biber slides
 	xelatex $< -o slides.pdf
 	rm -f *.aux *.snm *.toc *.log *.nax *.out
 	#evince slides.pdf

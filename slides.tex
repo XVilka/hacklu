@@ -1,6 +1,10 @@
 \documentclass[10pt,pdf,utf8,english,compress,hyperref={unicode}]{beamer}
+\usepackage{ifxetex}
 \usepackage[english]{babel}
+\ifxetex
+\else
 \usepackage[backend=biber,style=authoryear]{biblatex}
+\fi
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 \usepackage{url}
@@ -10,7 +14,6 @@
 \graphicspath{{./pix/}}
 
 % ------ Determine if we're being compiled under XeLaTeX -----
-\usepackage{ifxetex}
 \ifxetex
 	\usetheme[useTitleProgressBar]{m}
 \else
@@ -19,6 +22,9 @@
 
 % ------ Embed URL in the reference title ------
 
+\ifxetex
+% ---- START
+\else
 \renewbibmacro*{url+urldate}{}
 
 \newbibmacro{string+doiurl}[1]{%
@@ -58,6 +64,8 @@
 		\setlength{\parsep}{\bibparsep}}}
 	{\endlist}
 	{\item}
+% ----- END
+\fi
 
 % ------ Document starting here -------
 
@@ -68,7 +76,10 @@
 \date{\today}
 \institute{ISSA South Africa}
 
+\ifxetex
+\else
 \addbibresource{refs.bib}
+\fi
 
 \begin{document}
 \maketitle
@@ -124,7 +135,7 @@
   \end{itemize}
 \end{frame}
 
-\plain{Installation !}
+\plain{Installation}
 
 \begin{frame}[fragile]
   \frametitle{Installation}
@@ -378,7 +389,7 @@ This command is same as rahash2 -a sha1 file.exe
   \begin{itemize}
   \item Flags are used to specify a name for an offset: \alert{f?}.
   \item Add a function af+ hand craft a function (requires afb+)
-	\item f. name @ offset set local function label named 'blah'
+	\item f. name @ offset set local function label named `blah'
  \end{itemize}
  \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
  \begin{itemize}
@@ -410,7 +421,11 @@ This command is same as rahash2 -a sha1 file.exe
 \begin{frame}[fragile]
   \frametitle{The t command — types management}
   \begin{enumerate}
+\ifxetex
   \item Get Usage on the command \alert{t?} \footfullcite{r2types}
+\else
+  \item Get Usage on the command \alert{t?}
+\fi
   \item \alert{to} to load the types from the C header file
   \item \alert{tl} link type to the memory, \alert{tf} shows it like the pf
   \item add \alert{j} to get the output in the json format
@@ -467,15 +482,15 @@ This command is same as rahash2 -a sha1 file.exe
   \item \_ : HUD
   \item V : ASCII Graph
   \item 0-9 : Jump to function
-	\item u : Go back
+  \item u : Go back
  \end{enumerate}
 \end{frame}
 
 \section{Radare2 — WebUI}
 \begin{frame}[fragile]
-  \frametitle{Radare2 — WebUI}
+  \frametitle{Radare2 WebUI}
   r2 -A -c=H filename
-    \begin{figure}
+  \begin{figure}
   \includegraphics[width=\textwidth]{web.png}
   \end{figure}
 \end{frame}
@@ -566,7 +581,11 @@ This command is same as rahash2 -a sha1 file.exe
 
 \begin{frame}[fragile]
   \frametitle{WinDBG}
+\ifxetex
+  \center r2 allows to connect WinDBG/KD
+\else
   \center r2 allows to connect WinDBG/KD \footfullcite{r2windbg}
+\fi
   \center For example, to debug windows kernel via the serial port:
   \center bcdedit /debug on
   \center bcdedit /dbgsettings serial debugport:1 baudrate:115200
@@ -739,7 +758,11 @@ This command is same as rahash2 -a sha1 file.exe
   \frametitle{UEFI analysis}
   \begin{itemize}
     \item Dump the image using flashrom or hardware
+\ifxetex
+	\item Unpack the image using UEFITool
+\else
 	\item Unpack the image using UEFITool \footfullcite{uefitool}
+\fi
 	\item Open the selected PE or TE file using r2
   \end{itemize}
 \end{frame}
@@ -767,7 +790,11 @@ This command is same as rahash2 -a sha1 file.exe
   \frametitle{Old legacy BIOS analysis}
   % This shows the example of talking to the SMBus
   \begin{itemize}
+\ifxetex
+	\item Load the whole image or unpack it using bios\_extract
+\else
     \item Load the whole image or unpack it using bios\_extract \footfullcite{bios-extract}
+\fi
 	\item Open it using the correct segment and offset
 	\item r2 load the whole BIOS image automatically
 	\item r2 asrock\_p4i65g.bin
@@ -788,7 +815,11 @@ This command is same as rahash2 -a sha1 file.exe
 
 \begin{frame}[fragile]
   \frametitle{Embedded controller - 8051 - ESIL VM}
+\ifxetex
+  \center Lets start from the static analysis
+\else
   \center Lets start from the static analysis \footfullcite{r2esiltv}
+\fi
   \center r2 -a 8051 ite\_it8502.rom
   \center . ite\_it8502.r2
   \center run `e io.cache=true' to use the cache for write operations
@@ -823,10 +854,13 @@ This command is same as rahash2 -a sha1 file.exe
     \end{itemize}
 \end{frame}
 
+\ifxetex
+\else
 \section{References}
 \begin{frame}[allowframebreaks]
 	\frametitle{A lot of them}
 	\printbibliography
 \end{frame}
+\fi
 
 \end{document}
