@@ -643,7 +643,7 @@ This command is same as rahash2 -a sha1 file.exe
 \end{frame}
 
 \begin{frame}{getting binary info}
-	\includegraphics[width=\textwidth]{cr_images/bin-info.png}
+	\includegraphics[width=\textwidth]{crimages/bin-info.png}
 \end{frame}
 
 \begin{frame}{"telescoping" register}
@@ -656,7 +656,7 @@ This command is same as rahash2 -a sha1 file.exe
 			\end{itemize}
 		\end{column}
 		\begin{column}{.7\textwidth}
-			\includegraphics[width=\textwidth]{cr_images/peda_context.png}
+			\includegraphics[width=\textwidth]{crimages/peda_context.png}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -673,7 +673,7 @@ This command is same as rahash2 -a sha1 file.exe
 			\end{itemize}
 		\end{column}
 		\begin{column}{.7\textwidth}
-			\includegraphics[width=\textwidth]{cr_images/r2_context1.png}
+			\includegraphics[width=\textwidth]{crimages/r2_context1.png}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -717,7 +717,7 @@ This command is same as rahash2 -a sha1 file.exe
 \end{frame}
 
 \begin{frame}{context + patterns}
-	\includegraphics[width=\textwidth]{cr_images/bof1.png}
+	\includegraphics[width=\textwidth]{crimages/bof1.png}
 	\begin{itemize}
 		\item write your own expl ;)
 	\end{itemize}
@@ -742,7 +742,7 @@ This command is same as rahash2 -a sha1 file.exe
 \end{frame}
 
 \begin{frame}{shellcoding}
-	\includegraphics[width=\textwidth]{cr_images/shellcode.png}
+	\includegraphics[width=\textwidth]{crimages/shellcode.png}
 	\begin{itemize}
 		\item ragg2 file.r -s to show the emmitted asm.
 	\end{itemize}
@@ -770,19 +770,8 @@ This command is same as rahash2 -a sha1 file.exe
 		\item demo
 		\item r2 -A /path/to/libc
 		\item axt sym.execve
-		\look look through xrefs, find it.
-		\look simple demo program on vm does 1 call of your base10 input address
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{rop}
-	\begin{itemize}
-		\item can't always use this magic gadget
-		\item rsi must point to something argv-like
-		\item sometimes need to find some odd bespoke gadget!
-		\item r2 can dump gadgets
-		\item regular expression search
-		\item dump to json, write your own tool via r2pipe.
+		\item through xrefs, find it.
+		\item simple demo program on vm does 1 call of your base10 input address
 	\end{itemize}
 \end{frame}
 
@@ -799,13 +788,24 @@ This command is same as rahash2 -a sha1 file.exe
 
 \begin{frame}{stack layout}
 	\begin{itemize}
-		\item can't al
-		\item rsi must point to something argv-like
-		\item sometimes need to find some odd bespoke gadget!
-		\item r2 can dump gadgets
-		\item regular expression search
-		\item dump to json, write your own tool via r2pipe.
+			\item when you "ret"
+			\item ebp is increased by 4, jump to new\_ebp - 4
+			\item add esp,4
+			\item jmp dword ptr [esp-4]
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{searching for gadgets}
+	\begin{itemize}
+			\item sequence of instructions followed by "end/stop" gadget
+			\item (arbitrary instructions) - ret/call/jmp/etc...
+			\item finding the right ones is hard, r2 has regexp support
+			\item we can set variable filters.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{searching for gadgets}
+	\includegraphics[width=\textwidth]{crimages/poppopret.png}
 \end{frame}
 
 \section{Malware Analysis}
