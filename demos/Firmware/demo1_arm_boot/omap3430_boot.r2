@@ -446,294 +446,294 @@ af+ 0x4001ada8 4 nullsub_2
 "CCa 0x4001ada8 "
 af+ 0x4001b88c 28 j_dl_undefined_exp
 "CCa 0x4001b88c "
-f .return=0x400140f0
-f .previous_not_zero=0x400143b4
-f .loop=0x4001440c
-f .return_0=0x40014492
-f .return_0=0x400144d0
-f .loop=0x400144e0
-f .wait_for_status=0x400145fa
-f .loop=0x40014780
-f .loop=0x400147f8
-f .return=0x40014818
-f .boot_fast=0x400148d8
-f .boot_normal=0x400148f0
-f .memory_init=0x4001492c
-f .wait_SDRC_semaphore=0x40014988
-f .return=0x40014a82
-f .copy_loop=0x40014ba0
-f .simple_copy=0x40014bb8
-f .return=0x40014bf0
-f .return=0x40014c48
-f .error=0x40014d04
-f .is_0x22=0x40015058
-f .is_0x27=0x4001505c
-f .is_0x23=0x400150cc
-f .is_0x28=0x400150d0
-f .loop=0x4001510c
-f .wait=0x40015184
-f .not_GP_device=0x40015234
-f .GP_device=0x40015238
-f .return_0x14=0x40015310
-f .return=0x40015314
-f .service_end=0x400153a4
-f .return=0x40015768
-f .wait_loop=0x4001578a
-f .wait_loop=0x400157b4
-f .parse_CHRAM=0x40015a42
-f .parse_CHFLASH=0x40015a6e
-f .parse_CHMMCSD=0x40015a9e
-f .return_0=0x40015af0
-f .setup_CHSETTINGS=0x40015c50
-f .continue=0x40015c6e
-f .return_0=0x40015d8c
-f .return_1=0x40015dfc
-f .store_and_return=0x40015dfe
-f .return_0=0x40015ea2
-f .return_0_=0x4001605a
-f .return_0=0x4001605c
-f .return=0x4001605e
-f .return_2=0x40016064
-f .return_3=0x400160ca
-f .is_secured_device=0x4001612c
-f .return_ERROR=0x40016140
-f .boot_continue=0x40016148
-f .failed_auth=0x400161ce
-f .failed_boot=0x400161d6
-f .search_CertISW_mark=0x4001620e
-f .not_found=0x40016220
-f .found=0x40016222
-f .enable_speedup=0x40016246
-f .Load_keys_and_search_for_RnD_certificate=0x4001624a
-f .Keys_loaded_without_RnD=0x40016266
-f .return=0x40016280
-f .return_error=0x40016284
-f .return_1=0x40016292
-f .return_1_=0x40016366
-f .return_0_=0x40016368
-f .return_1=0x4001636a
-f .return=0x4001636c
-f .return_0=0x40016372
-f .return_1=0x40016420
-f .return=0x40016422
-f .return_0=0x40016434
-f .arg_is_more_0x11=0x4001647e
-f .arg_is_0x12=0x40016486
-f .return_0=0x400164c0
-f .arg_is_0x11=0x400164c4
-f .loop=0x400164ce
-f .arg_is_0x6=0x400164f2
-f .arg_is_0x5=0x40016546
-f .loop=0x4001660c
-f .arg_is_0x1=0x4001662c
-f .check_mode=0x40016630
-f .return_1=0x40016638
-f .mode_null=0x4001663c
-f .work=0x4001663e
-f .return_0=0x400166ce
-f .return_1=0x400166d2
-f .return_0=0x400166fa
-f .return_1=0x40016714
-f .return=0x4001676a
-f .return=0x400167f6
-f .return_1=0x4001688e
-f .return=0x40016890
-f .return_1=0x4001694a
-f .return=0x4001694c
-f .return_0=0x40016966
-f .loop=0x40016a5e
-f .wait_loop=0x40016a8a
-f .loop_start=0x40016b10
-f .inner_loop_start=0x40016b2a
-f .Directly_boot_image_if_non_HS=0x40016b78
-f .HS_type_memory_boot=0x40016b94
-f .return_1_=0x40016bc0
-f .go_boot=0x40016bc2
-f .inner_loop_end=0x40016bca
-f .loop_end=0x40016be4
-f .return_1=0x40016bf4
-f .return_1=0x40016c38
-f .return_0=0x40016c7a
-f .return_0=0x40017006
-f .return_1=0x40017058
-f .return_1=0x40017148
-f .return=0x4001714a
-f .return_1=0x400171e0
-f .return=0x400171e2
-f .return_1=0x40017284
-f .return=0x40017286
-f .return_1=0x40017434
-f .return=0x40017436
-f .return_1=0x4001750c
-f .return_0=0x40017510
-f .check_timer_hz=0x40017556
-f .check_GMPC_status=0x40017560
-f .check_timer_hz=0x4001757c
-f .check_gpmc_status=0x40017586
-f .return_1=0x40017616
-f .return=0x40017618
-f .return=0x400176da
-f .return=0x4001772c
-f .return_0=0x400177b8
-f .return=0x40017800
-f .loop=0x40017810
-f .return_non_GP=0x40017854
-f .return=0x4001786a
-f .return_1=0x4001794a
-f .return=0x4001794c
-f .return_1=0x4001798c
-f .return_1=0x400179e0
-f .boot_cycle_next=0x40017a10
-f .continue=0x40017bf4
-f .return=0x40017d10
-f .parse_speedup=0x40017d14
-f .entry_set_loop=0x40017d28
-f .memory_entry=0x40017d66
-f .next_entry=0x40017dbc
-f .L4_unkn_check_status=0x40017dec
-f .verify_state=0x40017dfe
-f .L4_unkn_start_talk=0x40017e02
-f .return_2=0x40017e34
-f .return=0x40017e36
-f .return_0=0x40017ebc
-f .return_1=0x40017ec0
-f .return_1=0x40017f4a
-f .return=0x40017f4c
-f .return_0=0x40017f86
-f .wait=0x40017f9a
-f .wait=0x40017fd8
-f .return_0_=0x4001800e
-f .return_1=0x40018010
-f .return_0=0x40018016
-f .wait_for_31_bit=0x4001802a
-f .return=0x40018098
-f .return_1=0x400180aa
-f .return=0x40018120
-f .HS_mode=0x4001815a
-f .search_TOC=0x40018160
-f .return_0=0x40018194
-f .return=0x40018196
-f .invalid_TOC=0x4001819a
-f .return_1=0x400181a2
-f .return_result=0x4001821a
-f .return=0x4001823a
-f .loop_start=0x40018246
-f .loop_end=0x40018254
-f .return=0x4001825c
-f .try_I2C=0x40018272
-f .return_1=0x4001830a
-f .return=0x4001830c
-f .return=0x40018400
-f .set_bauds_continue=0x4001849a
-f .set_baud_rate=0x400184cc
-f .return_0=0x400184ce
-f .stop_usb=0x40018572
-f .return_1=0x40018576
-f .return_1=0x400185fa
-f .nor_deinitialisation=0x400185fe
-f .return_0=0x40018612
-f .dead_loop=0x40018640
-f .is_GP_mode=0x400186e4
-f .write_4=0x400186e8
-f .return=0x400186ec
-f .write_R5=0x400186f0
-f .return=0x400188ba
-f .return_1=0x40018be2
-f .return=0x40018be4
-f .return_0=0x40018bf0
-f .return_1=0x40018c24
-f .return_1=0x40018c3c
-f .return_0=0x40018c50
-f .return_1=0x40018ca2
-f .return=0x40018ca4
-f .return_1=0x40018dce
-f .return_0=0x40018e62
-f .def_40018E7A=0x40018eba
-f .return_1=0x40018ec4
-f .return=0x40018ec6
-f .return_0=0x40018eca
-f .return_1=0x40018efa
-f .return_1=0x40018f5e
-f .return=0x40018f60
-f .return_1=0x40018f96
-f .return_0=0x40018f9e
-f .return_1=0x40018fb8
-f .return_0=0x40018fcc
-f .return_1=0x40019030
-f .return=0x40019032
-f .return_0=0x40019046
-f .return=0x400191a4
-f .not_cold_reset=0x4001923c
-f .return_1=0x400192ce
-f .return=0x400192d0
-f .return_0=0x400192d6
-f .return_success=0x400193fa
-f .downloaded_image_body_start=0x40019404
-f .downloaded_image_end=0x40019408
-f .memory_buffer_ptr=0x4001940c
-f .image_noexec_function_ptr=0x40019410
-f .return_1=0x40019468
-f .return_0=0x4001948e
-f .return=0x400194f8
-f .return_0=0x4001955a
-f .return=0x4001955c
-f .return_1=0x40019566
-f .return_1_=0x400195ec
-f .return_0=0x400195f2
-f .return=0x400195f4
-f .def_400195DE=0x400195fa
-f .return_1=0x40019680
-f .return=0x40019682
-f .return_0=0x40019688
-f .return_1=0x400197c4
-f .return=0x400197c6
-f .return_1=0x40019828
-f .return=0x4001982a
-f .return=0x40019ae8
-f .return_1=0x40019b30
-f .return=0x40019bc4
-f .return_1=0x40019bc8
-f .return=0x40019bf6
-f .return_1=0x40019c16
-f .return=0x40019c18
-f .return_0=0x40019cce
-f .return=0x40019e3a
-f .not_ready=0x40019e70
-f .return=0x40019e7e
-f .return=0x40019ee4
-f .loop_end=0x40019efa
-f .loop_start=0x40019f04
-f .return=0x40019f2c
-f .return_1=0x40019f8a
-f .return=0x40019f8c
-f .return_1=0x40019fbe
-f .return=0x40019fc0
-f .return_1=0x4001a0d2
-f .return=0x4001a0d4
-f .return_0=0x4001a0d8
-f .return_1=0x4001a1e6
-f .return=0x4001a1e8
-f .return_0=0x4001a1ee
-f .loop_start=0x4001a210
-f .return=0x4001a224
-f .loop_continue=0x4001a228
-f .loop_end=0x4001a22c
-f .return=0x4001a2b4
-f .return=0x4001a2de
-f .return=0x4001a33e
-f .return_=0x4001a364
-f .return=0x4001a402
-f .return_=0x4001a4ae
-f .return=0x4001a4f2
-f .return=0x4001a5fa
-f .def_4001A670=0x4001a6f0
-f .return=0x4001a700
-f .return_1=0x4001a8a8
-f .return_0=0x4001a8ac
-f .return=0x4001a8e0
-f .return=0x4001a9de
-f .return=0x4001ac40
-f .return_0=0x4001ad98
+f.return @ 0x400140f0
+f.previous_not_zero @ 0x400143b4
+f.loop @ 0x4001440c
+f.return_0 @ 0x40014492
+f.return_0 @ 0x400144d0
+f.loop @ 0x400144e0
+f.wait_for_status @ 0x400145fa
+f.loop @ 0x40014780
+f.loop @ 0x400147f8
+f.return @ 0x40014818
+f.boot_fast @ 0x400148d8
+f.boot_normal @ 0x400148f0
+f.memory_init @ 0x4001492c
+f.wait_SDRC_semaphore @ 0x40014988
+f.return @ 0x40014a82
+f.copy_loop @ 0x40014ba0
+f.simple_copy @ 0x40014bb8
+f.return @ 0x40014bf0
+f.return @ 0x40014c48
+f.error @ 0x40014d04
+f.is_0x22 @ 0x40015058
+f.is_0x27 @ 0x4001505c
+f.is_0x23 @ 0x400150cc
+f.is_0x28 @ 0x400150d0
+f.loop @ 0x4001510c
+f.wait @ 0x40015184
+f.not_GP_device @ 0x40015234
+f.GP_device @ 0x40015238
+f.return_0x14 @ 0x40015310
+f.return @ 0x40015314
+f.service_end @ 0x400153a4
+f.return @ 0x40015768
+f.wait_loop @ 0x4001578a
+f.wait_loop @ 0x400157b4
+f.parse_CHRAM @ 0x40015a42
+f.parse_CHFLASH @ 0x40015a6e
+f.parse_CHMMCSD @ 0x40015a9e
+f.return_0 @ 0x40015af0
+f.setup_CHSETTINGS @ 0x40015c50
+f.continue @ 0x40015c6e
+f.return_0 @ 0x40015d8c
+f.return_1 @ 0x40015dfc
+f.store_and_return @ 0x40015dfe
+f.return_0 @ 0x40015ea2
+f.return_0_ @ 0x4001605a
+f.return_0 @ 0x4001605c
+f.return @ 0x4001605e
+f.return_2 @ 0x40016064
+f.return_3 @ 0x400160ca
+f.is_secured_device @ 0x4001612c
+f.return_ERROR @ 0x40016140
+f.boot_continue @ 0x40016148
+f.failed_auth @ 0x400161ce
+f.failed_boot @ 0x400161d6
+f.search_CertISW_mark @ 0x4001620e
+f.not_found @ 0x40016220
+f.found @ 0x40016222
+f.enable_speedup @ 0x40016246
+f.Load_keys_and_search_for_RnD_certificate @ 0x4001624a
+f.Keys_loaded_without_RnD @ 0x40016266
+f.return @ 0x40016280
+f.return_error @ 0x40016284
+f.return_1 @ 0x40016292
+f.return_1_ @ 0x40016366
+f.return_0_ @ 0x40016368
+f.return_1 @ 0x4001636a
+f.return @ 0x4001636c
+f.return_0 @ 0x40016372
+f.return_1 @ 0x40016420
+f.return @ 0x40016422
+f.return_0 @ 0x40016434
+f.arg_is_more_0x11 @ 0x4001647e
+f.arg_is_0x12 @ 0x40016486
+f.return_0 @ 0x400164c0
+f.arg_is_0x11 @ 0x400164c4
+f.loop @ 0x400164ce
+f.arg_is_0x6 @ 0x400164f2
+f.arg_is_0x5 @ 0x40016546
+f.loop @ 0x4001660c
+f.arg_is_0x1 @ 0x4001662c
+f.check_mode @ 0x40016630
+f.return_1 @ 0x40016638
+f.mode_null @ 0x4001663c
+f.work @ 0x4001663e
+f.return_0 @ 0x400166ce
+f.return_1 @ 0x400166d2
+f.return_0 @ 0x400166fa
+f.return_1 @ 0x40016714
+f.return @ 0x4001676a
+f.return @ 0x400167f6
+f.return_1 @ 0x4001688e
+f.return @ 0x40016890
+f.return_1 @ 0x4001694a
+f.return @ 0x4001694c
+f.return_0 @ 0x40016966
+f.loop @ 0x40016a5e
+f.wait_loop @ 0x40016a8a
+f.loop_start @ 0x40016b10
+f.inner_loop_start @ 0x40016b2a
+f.Directly_boot_image_if_non_HS @ 0x40016b78
+f.HS_type_memory_boot @ 0x40016b94
+f.return_1_ @ 0x40016bc0
+f.go_boot @ 0x40016bc2
+f.inner_loop_end @ 0x40016bca
+f.loop_end @ 0x40016be4
+f.return_1 @ 0x40016bf4
+f.return_1 @ 0x40016c38
+f.return_0 @ 0x40016c7a
+f.return_0 @ 0x40017006
+f.return_1 @ 0x40017058
+f.return_1 @ 0x40017148
+f.return @ 0x4001714a
+f.return_1 @ 0x400171e0
+f.return @ 0x400171e2
+f.return_1 @ 0x40017284
+f.return @ 0x40017286
+f.return_1 @ 0x40017434
+f.return @ 0x40017436
+f.return_1 @0x4001750c
+f.return_0 @ 0x40017510
+f.check_timer_hz @ 0x40017556
+f.check_GMPC_status @0x40017560
+f.check_timer_hz @ 0x4001757c
+f.check_gpmc_status @ 0x40017586
+f.return_1 @ 0x40017616
+f.return @ 0x40017618
+f.return @ 0x400176da
+f.return @ 0x4001772c
+f.return_0 @ 0x400177b8
+f.return @ 0x40017800
+f.loop @ 0x40017810
+f.return_non_GP @ 0x40017854
+f.return @ 0x4001786a
+f.return_1 @ 0x4001794a
+f.return @ 0x4001794c
+f.return_1 @ 0x4001798c
+f.return_1 @ 0x400179e0
+f.boot_cycle_next @ 0x40017a10
+f.continue @ 0x40017bf4
+f.return @ 0x40017d10
+f.parse_speedup @ 0x40017d14
+f.entry_set_loop @ 0x40017d28
+f.memory_entry @ 0x40017d66
+f.next_entry @ 0x40017dbc
+f.L4_unkn_check_status @ 0x40017dec
+f.verify_state @ 0x40017dfe
+f.L4_unkn_start_talk @ 0x40017e02
+f.return_2 @ 0x40017e34
+f.return @ 0x40017e36
+f.return_0 @ 0x40017ebc
+f.return_1 @ 0x40017ec0
+f.return_1 @ 0x40017f4a
+f.return @ 0x40017f4c
+f.return_0 @ 0x40017f86
+f.wait @ 0x40017f9a
+f.wait @ 0x40017fd8
+f.return_0_ @ 0x4001800e
+f.return_1 @ 0x40018010
+f.return_0 @ 0x40018016
+f.wait_for_31_bit @ 0x4001802a
+f.return @ 0x40018098
+f.return_1 @ 0x400180aa
+f.return @ 0x40018120
+f.HS_mode @ 0x4001815a
+f.search_TOC @ 0x40018160
+f.return_0 @ 0x40018194
+f.return @ 0x40018196
+f.invalid_TOC @ 0x4001819a
+f.return_1 @ 0x400181a2
+f.return_result @ 0x4001821a
+f.return @ 0x4001823a
+f.loop_start @ 0x40018246
+f.loop_end @ 0x40018254
+f.return @ 0x4001825c
+f.try_I2C @ 0x40018272
+f.return_1 @ 0x4001830a
+f.return @ 0x4001830c
+f.return @ 0x40018400
+f.set_bauds_continue @ 0x4001849a
+f.set_baud_rate @ 0x400184cc
+f.return_0 @ 0x400184ce
+f.stop_usb @ 0x40018572
+f.return_1 @ 0x40018576
+f.return_1 @ 0x400185fa
+f.nor_deinitialisation @ 0x400185fe
+f.return_0 @ 0x40018612
+f.dead_loop @ 0x40018640
+f.is_GP_mode @ 0x400186e4
+f.write_4 @ 0x400186e8
+f.return @ 0x400186ec
+f.write_R5 @ 0x400186f0
+f.return @ 0x400188ba
+f.return_1 @ 0x40018be2
+f.return @ 0x40018be4
+f.return_0 @ 0x40018bf0
+f.return_1 @ 0x40018c24
+f.return_1 @ 0x40018c3c
+f.return_0 @ 0x40018c50
+f.return_1 @ 0x40018ca2
+f.return @ 0x40018ca4
+f.return_1 @ 0x40018dce
+f.return_0 @ 0x40018e62
+f.def_40018E7A @ 0x40018eba
+f.return_1 @ 0x40018ec4
+f.return @ 0x40018ec6
+f.return_0 @ 0x40018eca
+f.return_1 @ 0x40018efa
+f.return_1 @ 0x40018f5e
+f.return @ 0x40018f60
+f.return_1 @ 0x40018f96
+f.return_0 @ 0x40018f9e
+f.return_1 @ 0x40018fb8
+f.return_0 @ 0x40018fcc
+f.return_1 @ 0x40019030
+f.return @ 0x40019032
+f.return_0 @ 0x40019046
+f.return @ 0x400191a4
+f.not_cold_reset @ 0x4001923c
+f.return_1 @ 0x400192ce
+f.return @ 0x400192d0
+f.return_0 @ 0x400192d6
+f.return_success @0x400193fa
+f.downloaded_image_body_start @ 0x40019404
+f.downloaded_image_end @ 0x40019408
+f.memory_buffer_ptr @ 0x4001940c
+f.image_noexec_function_ptr @ 0x40019410
+f.return_1 @ 0x40019468
+f.return_0 @ 0x4001948e
+f.return @ 0x400194f8
+f.return_0 @ 0x4001955a
+f.return @ 0x4001955c
+f.return_1 @ 0x40019566
+f.return_1_ @ 0x400195ec
+f.return_0 @ 0x400195f2
+f.return @ 0x400195f4
+f.def_400195DE @ 0x400195fa
+f.return_1 @ 0x40019680
+f.return @ 0x40019682
+f.return_0 @ 0x40019688
+f.return_1 @ 0x400197c4
+f.return @ 0x400197c6
+f.return_1 @ 0x40019828
+f.return @ 0x4001982a
+f.return @ 0x40019ae8
+f.return_1 @ 0x40019b30
+f.return @ 0x40019bc4
+f.return_1 @ 0x40019bc8
+f.return @ 0x40019bf6
+f.return_1 @ 0x40019c16
+f.return @ 0x40019c18
+f.return_0 @ 0x40019cce
+f.return @ 0x40019e3a
+f.not_ready @ 0x40019e70
+f.return @ 0x40019e7e
+f.return @ 0x40019ee4
+f.loop_end @ 0x40019efa
+f.loop_start @ 0x40019f04
+f.return @ 0x40019f2c
+f.return_1 @ 0x40019f8a
+f.return @ 0x40019f8c
+f.return_1 @ 0x40019fbe
+f.return @ 0x40019fc0
+f.return_1 @ 0x4001a0d2
+f.return @ 0x4001a0d4
+f.return_0 @ 0x4001a0d8
+f.return_1 @ 0x4001a1e6
+f.return @ 0x4001a1e8
+f.return_0 @ 0x4001a1ee
+f.loop_start @ 0x4001a210
+f.return @ 0x4001a224
+f.loop_continue @ 0x4001a228
+f.loop_end @ 0x4001a22c
+f.return @ 0x4001a2b4
+f.return @ 0x4001a2de
+f.return @ 0x4001a33e
+f.return_ @ 0x4001a364
+f.return @ 0x4001a402
+f.return_ @ 0x4001a4ae
+f.return @ 0x4001a4f2
+f.return @ 0x4001a5fa
+f.def_4001A670 @ 0x4001a6f0
+f.return @ 0x4001a700
+f.return_1 @ 0x4001a8a8
+f.return_0 @ 0x4001a8ac
+f.return @ 0x4001a8e0
+f.return @ 0x4001a9de
+f.return @ 0x4001ac40
+f.return_0 @ 0x4001ad98
 "CCa 98980 switch 5 cases "
 "CCa 98984 switch jump"
 "CCa 98988 jump table for switch statement"
