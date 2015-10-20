@@ -72,7 +72,7 @@
 
 \title{Radare2}
 \subtitle{Radare2 - a framework for reverse engineering}
-\author{Maxime Morin (@Maijin212), Anton Kochkov (@akochkov)}
+\author{Maxime Morin (@Maijin212), Julien Voisin, Jeffrey Crowell (@jeffreycrowell), Anton Kochkov (@akochkov)}
 \date{\today}
 \institute{Hack.lu 10-2015}
 
@@ -526,13 +526,14 @@ This command is same as rahash2 -a sha1 file.exe
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Rarun2 \&\& Ragg2}
+  \frametitle{R2PM}
+	\center\textbf{R2PM} — radare2 package manager
   \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
   \begin{enumerate}
-  \item Will be shown in Julien and Crowell'parts
+  \item r2pm -s (list all plugins)
+	\item r2pm -i retdec
  \end{enumerate}
 \end{frame}
-
 \begin{frame}[fragile]
   \frametitle{Debugging}
   \begin{itemize}
@@ -541,6 +542,14 @@ This command is same as rahash2 -a sha1 file.exe
 	\item GDB remote protocol support
 	\item WinDBG remote protocol support
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Rarun2 \&\& Ragg2}
+  \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+  \begin{enumerate}
+  \item Will be shown in Julien and Crowell'parts
+ \end{enumerate}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -801,6 +810,14 @@ This command is same as rahash2 -a sha1 file.exe
 			\item (arbitrary instructions) - ret/call/jmp/etc...
 			\item finding the right ones is hard, r2 has regexp support
 			\item we can set variable filters.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{demo time}
+	\begin{itemize}
+			\item super basic rop expl.
+			\item combine finding sections, patterns, rop search.
+			\item r2 makes this easy
 	\end{itemize}
 \end{frame}
 
