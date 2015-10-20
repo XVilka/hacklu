@@ -542,57 +542,6 @@ This command is same as rahash2 -a sha1 file.exe
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{GDB protocol}
-  \center Just run gdbserver somewhere
-  \center and connect r2 to it:
-  \center r2 -D gdb -d /bin/ls gdb://99.44.23.50:4589
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{GDB protocol + Wine}
-  \center Winedbg allows to run windows command
-  \center using the gdbserver too:
-  \center winedbg --gdb --no-start malware.exe
-  \center r2 -a x86 -b 32 -D gdb -d malware.exe gdb://localhost:44840
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{WinDBG}
-\ifxetex
-  \center r2 allows to connect WinDBG/KD
-\else
-  \center r2 allows to connect WinDBG/KD \footfullcite{r2windbg}
-\fi
-  \center For example, to debug windows kernel via the serial port:
-  \center bcdedit /debug on
-  \center bcdedit /dbgsettings serial debugport:1 baudrate:115200
-  \center then connect r2:
-  \center r2 -a x86 -b 32 -D wind windbg:///tmp/windbg.pipe
-  \center For now, connecting to the QEMU and VirtualBox are tested
-% More information here https://github.com/radare/radare2/blob/master/doc/windbg
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Debugging OMAP BootRom}
-  \center Just run it in the modified qemu https://github.com/XVilka/qemu
-  \center ./configure --target-list=arm-softmmu ; make ; sudo make install
-  \center qemu-system-arm -M milestone -m 256 -L . -bios bootrom.bin -mtdblock	mbmloader-1.raw -d in\_asm,cpu,exec -nographic -s -S
-  \center r2 -D gdb -b arm gdb://localhost:9999
-  \center Same approach could be used for any customized hardware
-\end{frame}
-
-% show demo here - demos/demo1_arm_boot
-
-\begin{frame}[fragile]
-  \frametitle{GDB protocol + Wine}
-  \center Winedbg allows to run windows command
-  \center using the gdbserver too:
-  \center winedbg --gdb --no-start malware.exe
-  \center r2 -a x86 -b 32 -D gdb -d malware.exe gdb://localhost:44840
-\end{frame}
-
-
-\begin{frame}[fragile]
   \frametitle{Scripting Capabilities}
   \center Available for a lot of programming languages
   \center\textbf{Radare2 Bindings} —
@@ -809,6 +758,56 @@ This command is same as rahash2 -a sha1 file.exe
  \end{enumerate}
 \end{frame}
 
+\section{Debugging}
+\begin{frame}[fragile]
+  \frametitle{GDB protocol}
+  \center Just run gdbserver somewhere
+  \center and connect r2 to it:
+  \center r2 -D gdb -d /bin/ls gdb://99.44.23.50:4589
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{GDB protocol + Wine}
+  \center Winedbg allows to run windows command
+  \center using the gdbserver too:
+  \center winedbg --gdb --no-start malware.exe
+  \center r2 -a x86 -b 32 -D gdb -d malware.exe gdb://localhost:44840
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{WinDBG}
+\ifxetex
+  \center r2 allows to connect WinDBG/KD
+\else
+  \center r2 allows to connect WinDBG/KD \footfullcite{r2windbg}
+\fi
+  \center For example, to debug windows kernel via the serial port:
+  \center bcdedit /debug on
+  \center bcdedit /dbgsettings serial debugport:1 baudrate:115200
+  \center then connect r2:
+  \center r2 -a x86 -b 32 -D wind windbg:///tmp/windbg.pipe
+  \center For now, connecting to the QEMU and VirtualBox are tested
+% More information here https://github.com/radare/radare2/blob/master/doc/windbg
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Debugging OMAP BootRom}
+  \center Just run it in the modified qemu https://github.com/XVilka/qemu
+  \center ./configure --target-list=arm-softmmu ; make ; sudo make install
+  \center qemu-system-arm -M milestone -m 256 -L . -bios bootrom.bin -mtdblock	mbmloader-1.raw -d in\_asm,cpu,exec -nographic -s -S
+  \center r2 -D gdb -b arm gdb://localhost:9999
+  \center Same approach could be used for any customized hardware
+\end{frame}
+
+% show demo here - demos/demo1_arm_boot
+
+\begin{frame}[fragile]
+  \frametitle{GDB protocol + Wine}
+  \center Winedbg allows to run windows command
+  \center using the gdbserver too:
+  \center winedbg --gdb --no-start malware.exe
+  \center r2 -a x86 -b 32 -D gdb -d malware.exe gdb://localhost:44840
+\end{frame}
 
 \section{Firmware analysis}
 \begin{frame}[fragile]
