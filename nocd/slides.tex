@@ -27,7 +27,7 @@
 	\begin{block}{Julien (jvoisin) Voisin}
 	\begin{itemize}
 		\item French
-		\item Working at FIXME
+		\item Freshly graduated
 		\item I don't know Windows
 	\end{itemize}
 	\end{block}
@@ -74,20 +74,16 @@
 	\begin{block}{Your turn!}
 		\begin{itemize}[<+->]
 			\item Find where \alert{GetDriveTypeA} is called
-			\item Hint: it's likely an \alert{a}nalysis command
+			\item It's likely an \alert{a}nalysis command, about \alert{x}ref \alert{t}o something
 			\item There are two locations:
 				\begin{itemize}
 					\item \emph{0x4d65f6}
 					\item \emph{0x5352ee}
 				\end{itemize}
-			\item Which one is the relevant one?
-			\item Hints:
-				\begin{itemize}
-					\item still an \alert{a}nalysis command
-					\item likely \alert{f}unction related
-					\item we're trying to get \alert{i}nformation
-				\end{itemize}
+			\item In what function do they belong?
+			\item Still in \alert{a}nalysis, \alert{f}unction related, about \alert{i}nformation
 			\item \emph{afi 0x4d65f6}
+			\item \emph{afi 0x5352ee}
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -101,7 +97,7 @@
 					\item \emph{0x004ab1aa}
 				\end{itemize}
 			\item Which one is the relevant one? (check with \emph{VV})
-			\item \emph{0x004d6550} is the cd-check routine!
+			\item \alert{0x004d6550} is the cd-check routine!
 		\end{itemize}
 	\end{block}
 \end{frame}
