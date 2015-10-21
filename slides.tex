@@ -360,11 +360,11 @@
 \section{Radare2 — Command line}
 
 \begin{frame}[fragile]
-  \frametitle{1 command <—> 1 Reverse-Engineering'notion}
+  \frametitle{1 command \textless—\textgreater 1 Reverse-Engineering'notion}
   Keep in mind that:
   \begin{enumerate}
   \item Every character has a meaning i.e \alert{(w = write, p = print)}
-  \item Every command is a succession of character i.e \alert{pdf = p <-> print d <-> disassemble f <-> function }
+  \item Every command is a succession of character i.e \alert{pdf = p \textless-\textgreater print d \textless-\textgreater disassemble f \textless-\textgreater function }
   \item Every command is documented with \textbf{cmd?}, i.e \alert{pdf?},\alert{?}, \alert{???}, \alert{???}, \alert{?\$?}, \alert{?@?}
   \end{enumerate}
 \end{frame}
@@ -373,7 +373,7 @@
   \frametitle{The \# command — hashing command}
   \begin{enumerate}
   \item Open a file with radare2 \alert{radare2 file.exe}
-  \item Get Usage on the command \alert{\#?} \textbf{Usage: \#algo <size> @ addr}
+  \item Get Usage on the command \alert{\#?} \textbf{Usage: \#algo \textless size\textgreater @ addr}
   \item List of all existing algorithms \alert{\#\#}
   \item SHA1 \alert{\#sha1}
   \item Hashing from the begin \alert{\#sha1 @ 0}
