@@ -5,7 +5,6 @@ import r2pipe
 import efiguids
 
 r2 = r2pipe.open("NTFS.efi")
-fout = open('NTFS.r2', 'w')
 
 for name, guid in efiguids.GUIDs.iteritems():
     b3b2b1b0, b5b4, b7b6, b8,b9,b10,b11,b12,b13,b14,b15 = guid
@@ -32,7 +31,6 @@ for name, guid in efiguids.GUIDs.iteritems():
             print("Found {0} at 0x{1:x} offset\n".format(name, i[u'offset']))
             r2_line = "f " + name + " 16 @ " + "0x{0:x}\n".format(i[u'offset'])
             print(r2_line)
-            fout.write(r2_line)
+            r2.cmd(r2_line)
 
-fout.close()
 
