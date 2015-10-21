@@ -6,7 +6,7 @@ slides: slides.tex
 	rm -f *.aux *.snm *.toc *.log *.nax *.out
 	#evince slides.pdf
 
-slides-bib:
+slides-bib: slides.tex
 	pdflatex slides.tex
 	biber slides
 	pdflatex $< -o slides.pdf

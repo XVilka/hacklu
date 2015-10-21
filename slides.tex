@@ -13,12 +13,13 @@
 
 \graphicspath{{./pix/}}
 
-% ------ Determine if we're being compiled under XeLaTeX -----
-\ifxetex
-	\usetheme[useTitleProgressBar]{m}
-\else
-	\usetheme[useTitleProgressBar]{m}
-\fi
+\listfiles
+%\ifpackagelater{pgfplots}{2011/03/13}{%
+%	\usetheme[useTitleProgressBar]{m}
+%}{%
+%	% Do something different for the older version
+%}
+\usetheme{m}
 
 % ------ Embed URL in the reference title ------
 
@@ -879,7 +880,7 @@ This command is same as rahash2 -a sha1 file.exe
   \frametitle{Embedded controller - 8051}
   \center Lets start from the static analysis
   \center r2 -a 8051 ite\_it8502.rom
-  \center >. ite\_it8502.r2
+  \center \textgreater. ite\_it8502.r2
 \end{frame}
 
 % show demo here - demos/demo5_it8502e
