@@ -755,15 +755,19 @@ This command is same as rahash2 -a sha1 file.exe
   \frametitle{GDB protocol}
   \center Just run gdbserver somewhere
   \center and connect r2 to it:
-  \center r2 -D gdb -d /bin/ls gdb://99.44.23.50:4589
+  \begin{itemize}
+	  \item r2 -D gdb -d /bin/ls gdb://99.44.23.50:4589
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{GDB protocol + Wine}
   \center Winedbg allows to run windows command
   \center using the gdbserver too:
-  \center winedbg --gdb --no-start malware.exe
-  \center r2 -a x86 -b 32 -D gdb -d malware.exe gdb://localhost:44840
+  \begin{itemize}
+	  \item winedbg --gdb --no-start malware.exe
+	  \item r2 -a x86 -b 32 -D gdb -d malware.exe gdb://localhost:44840
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -774,10 +778,14 @@ This command is same as rahash2 -a sha1 file.exe
   \center r2 allows to connect WinDBG/KD \footfullcite{r2windbg}
 \fi
   \center For example, to debug windows kernel via the serial port:
-  \center bcdedit /debug on
-  \center bcdedit /dbgsettings serial debugport:1 baudrate:115200
+  \begin{itemize}
+	  \item bcdedit /debug on
+	  \item bcdedit /dbgsettings serial debugport:1 baudrate:115200
+  \end{itemize}
   \center then connect r2:
-  \center r2 -a x86 -b 32 -D wind windbg:///tmp/windbg.pipe
+  \begin{itemize}
+	  \item r2 -a x86 -b 32 -D wind windbg:///tmp/windbg.pipe
+  \end{itemize}
   \center For now, connecting to the QEMU and VirtualBox are tested
 % More information here https://github.com/radare/radare2/blob/master/doc/windbg
 \end{frame}
@@ -789,9 +797,11 @@ This command is same as rahash2 -a sha1 file.exe
 \else
   \center Just run it in the modified qemu \footfullcite{qemu-omap}
 \fi
-  \center ./configure --target-list=arm-softmmu ; make ; sudo make install
-  \center qemu-system-arm -M milestone -m 256 -L . -bios bootrom.bin -mtdblock	mbmloader-1.raw -d in\_asm,cpu,exec -nographic -s -S
-  \center r2 -D gdb -b arm gdb://localhost:9999
+  \begin{itemize}
+	  \item ./configure --target-list=arm-softmmu ; make ; sudo make install
+	  \item qemu-system-arm -M milestone -m 256 -L . -bios bootrom.bin -mtdblock	mbmloader-1.raw -d in\_asm,cpu,exec -nographic -s -S
+	  \item r2 -D gdb -b arm gdb://localhost:9999
+  \end{itemize}
   \center Same approach could be used for any customized hardware
 \end{frame}
 
@@ -801,8 +811,10 @@ This command is same as rahash2 -a sha1 file.exe
   \frametitle{GDB protocol + Wine}
   \center Winedbg allows to run windows command
   \center using the gdbserver too:
-  \center winedbg --gdb --no-start malware.exe
-  \center r2 -a x86 -b 32 -D gdb -d malware.exe gdb://localhost:44840
+  \begin{itemize}
+	  \item winedbg --gdb --no-start malware.exe
+	  \item r2 -a x86 -b 32 -D gdb -d malware.exe gdb://localhost:44840
+  \end{itemize}
 \end{frame}
 
 \section{Firmware analysis}
@@ -908,8 +920,10 @@ This command is same as rahash2 -a sha1 file.exe
 \begin{frame}[fragile]
   \frametitle{Embedded controller - 8051}
   \center Lets start from the static analysis
-  \center r2 -a 8051 ite\_it8502.rom
-  \center \textgreater. ite\_it8502.r2
+  \begin{itemize}
+	  \item r2 -a 8051 ite\_it8502.rom
+	  \item \textgreater. ite\_it8502.r2
+  \end{itemize}
 \end{frame}
 
 % show demo here - demos/demo5_it8502e
@@ -920,13 +934,15 @@ This command is same as rahash2 -a sha1 file.exe
 \else
   \frametitle{Embedded controller - 8051 - ESIL VM \footfullcite{r2esiltv}}
 \fi
-  \center r2 -a 8051 ite\_it8502.rom
-  \center . ite\_it8502.r2
-  \center run `e io.cache=true' to use the cache for write operations
-  \center run `aei' command to init ESIL VM
-  \center run `aeim' command to init ESIL VM stack
-  \center run `aeip' command to start from the current offset
-  \center run `aecu [addr]' to emulate until the [addr] is reached
+  \begin{itemize}
+	  \item r2 -a 8051 ite\_it8502.rom
+	  \item . ite\_it8502.r2
+	  \item run `e io.cache=true' to use the cache for write operations
+	  \item run `aei' command to init ESIL VM
+	  \item run `aeim' command to init ESIL VM stack
+	  \item run `aeip' command to start from the current offset
+	  \item run `aecu [addr]' to emulate until the [addr] is reached
+  \end{itemize}
 \end{frame}
 % show demo here
 % Reference to the example from here? http://radare.tv/a/44
@@ -934,15 +950,17 @@ This command is same as rahash2 -a sha1 file.exe
 \begin{frame}[fragile]
   \frametitle{Embedded controller - 8051 - ESIL2REIL}
   \center Lets start again from the same place
-  \center r2 -a 8051 ite\_it8502.rom
-  \center . ite\_it8502.r2
-  \center run `pae 36' to show the esil expression of the `set\_SMBus\_frequency'
+  \begin{itemize}
+	  \item r2 -a 8051 ite\_it8502.rom
+	  \item . ite\_it8502.r2
+	  \item run `pae 36' to show the esil expression of the `set\_SMBus\_frequency'
 \ifxetex
-  \center run `aetr \`{}pae 36\`' to convert the previous esil output to REIL
+	  \item run `aetr \`{}pae 36\`' to convert the previous esil output to REIL
 \else
-  \center run `aetr \`{}pae 36\`' to convert the previous esil output to REIL\footfullcite{openreil}
+	  \item run `aetr \`{}pae 36\`' to convert the previous esil output to REIL\footfullcite{openreil}
 \fi
-  \center store this to some file and use the `openreil' utility to SMT it
+	  \item store this to some file and use the `openreil' utility to SMT it
+  \end{itemize}
 \end{frame}
 % this is:
 % aetr `pae 36`
