@@ -16,11 +16,6 @@ opcodes = [
 
 r = r2pipe.open('-')
 
-for i in opcodes:
-    opcode = r.cmdj('abj %s' % i)[0]
-    if opcode['family'] != 'fpu':
-        print opcode['opcode']
-        sys.exit(0)
-print('[+] All instructions are FPU ones!')
-
+# Hint: `abj` is the command you're looking for
+# Hint2: you're checking the `family` of the opcode
 
