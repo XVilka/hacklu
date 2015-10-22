@@ -851,6 +851,24 @@ This command is same as rahash2 -a sha1 file.exe
  \end{enumerate}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Searching GUIDs}
+  \begin{enumerate}
+\ifxetex
+  \item We need r2pipe (python) for that \alert{\#?}
+\else
+  \item We need r2pipe (python) for that \alert{\#?} \footfullcite{r2pipe}
+\fi
+  \item \alert{.} command to load the pipe script
+  \item \textgreater. search\_guids.py
+\ifxetex
+  \item this script using the EFI guids list from the snarez's repo
+\else
+  \item this script using the EFI guids list from the snarez's repo \footfullcite{ida-efiutils}
+\fi
+ \end{enumerate}
+\end{frame}
+
 % This demo is in demos/demo3_x86_legacy
 % 1. Open 'r2 -a x86 asrock_p4i65g.bin'  - it should recognize legacy BIOS format automatically
 % (x86, 16bit)
@@ -880,7 +898,11 @@ This command is same as rahash2 -a sha1 file.exe
 % show demo here - demos/demo5_it8502e
 
 \begin{frame}[fragile]
+\ifxetex
+  \frametitle{Embedded controller - 8051 - ESIL VM}
+\else
   \frametitle{Embedded controller - 8051 - ESIL VM \footfullcite{r2esiltv}}
+\fi
   \center r2 -a 8051 ite\_it8502.rom
   \center . ite\_it8502.r2
   \center run `e io.cache=true' to use the cache for write operations
@@ -898,7 +920,11 @@ This command is same as rahash2 -a sha1 file.exe
   \center r2 -a 8051 ite\_it8502.rom
   \center . ite\_it8502.r2
   \center run `pae 36' to show the esil expression of the `set\_SMBus\_frequency'
+\ifxetex
   \center run `aetr \`{}pae 36\`' to convert the previous esil output to REIL
+\else
+  \center run `aetr \`{}pae 36\`' to convert the previous esil output to REIL\footfullcite{openreil}
+\fi
   \center store this to some file and use the `openreil' utility to SMT it
 \end{frame}
 % this is:
