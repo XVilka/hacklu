@@ -618,6 +618,17 @@ This command is same as rahash2 -a sha1 file.exe
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{debugger}
+	\begin{itemize}
+		\item native, or remote (windows, gdb, ...)
+		\item d?
+		\item db addr/flag
+		\item dc[u] debug, continue [until]
+		\item visual mode "?" c for cursor, b for breakpoints
+		\item starts in the loader, "dcu entry0" before doing any analyis.
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{debug 'profiles'}
 	\begin{itemize}
 		\item r2 -de dbg.profile=file.rr2 exec.elf
@@ -628,7 +639,7 @@ This command is same as rahash2 -a sha1 file.exe
 
 \begin{frame}{context + patterns}
 	\begin{itemize}
-		\item bof from pwnable.kr
+		\item bof from pwnable.kr \footfullcite{pwnablekr}
 		\item super simple challenge, overflow a buffer
 		\item offset at a certain place must be.
 		\item let's use rarun2 + references + patterns!
