@@ -4,7 +4,7 @@ import r2pipe
 # GUIDs dictionaries
 import efiguids
 
-r2 = r2pipe.open("NTFS.efi")
+r2 = r2pipe.open(None)
 
 for name, guid in efiguids.GUIDs.iteritems():
     b3b2b1b0, b5b4, b7b6, b8,b9,b10,b11,b12,b13,b14,b15 = guid
@@ -29,8 +29,14 @@ for name, guid in efiguids.GUIDs.iteritems():
         print(type(i))
         if isinstance(i,dict):
             print("Found {0} at 0x{1:x} offset\n".format(name, i[u'offset']))
+            # Removing the 'hit_*' flags, unneeded now
+            r2_line = "f- @ 0x{0:x}".format(i[u'offset'])
+            r2.cmd(r2_line)
+            # Adding the flag with the GUID name
             r2_line = "f " + name + " 16 @ " + "0x{0:x}\n".format(i[u'offset'])
-            print(r2_line)
+            r2.cmd(r2_line)
+            # Markinf the GUID as a data
+            r2_line = "Cd 16 @ " + "0x{0:x}\n".format(i[u'offset'])
             r2.cmd(r2_line)
 
 
